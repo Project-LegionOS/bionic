@@ -121,7 +121,7 @@ static int cmp_hcent_name(const void *a, const void *b)
 	return hstrcmp(na, nb);
 }
 
-static struct hcent *_hcfindname(const char *name)
+static struct hcent *_hcfindname_exact(const char *name)
 {
 	size_t first, last, mid;
 	struct hcent *cur = NULL;
@@ -162,7 +162,6 @@ found:
 	return cur;
 }
 
-<<<<<<< HEAD
 static struct hcent *_hcfindname(const char *name)
 {
 	struct hcent *ent;
@@ -190,8 +189,6 @@ static struct hcent *_hcfindname(const char *name)
 	return ent;
 }
 
-=======
->>>>>>> c2f3731f2... bionic: Sort and cache hosts file data for fast lookup
 /*
  * Find next name on line, if any.
  *
